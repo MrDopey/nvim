@@ -58,7 +58,12 @@ return {
         --
         -- See :h blink-cmp-config-keymap for defining your own keymap
         preset = 'default',
+        ['<CR>'] = { 'select_and_accept', 'fallback' },
+        ['<Tab>'] = { 'select_and_accept', 'fallback' },
+        ['<S-Tab>'] = { 'select_prev', 'fallback' },
 
+        ['<C-e>'] = { 'select_prev', 'fallback_to_mappings' },
+        ['<C-n>'] = { 'select_next', 'fallback_to_mappings' },
         -- For more advanced Luasnip keymaps (e.g. selecting choice nodes, expansion) see:
         --    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
       },
@@ -73,6 +78,12 @@ return {
         -- By default, you may press `<c-space>` to show the documentation.
         -- Optionally, set `auto_show = true` to show the documentation after a delay.
         documentation = { auto_show = false, auto_show_delay_ms = 500 },
+
+        accept = {
+          auto_brackets = {
+            enabled = false,
+          },
+        },
       },
 
       sources = {
