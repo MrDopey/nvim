@@ -61,7 +61,8 @@ return {
       spec = {
         { '<leader>s', group = '[S]earch' }, -- Telescope
         { '<leader>t', group = '[T]oggle' }, -- Gitsigns
-        { '<leader>h', group = '[G]it Hunk', mode = { 'n', 'v' } }, -- Gitsigns
+        { '<leader>g', group = '[G]it Hunk', mode = { 'n', 'v' } }, -- Gitsigns
+        { '<leader>h', group = '[H]arpoon', mode = 'c' }, -- Harpoon
       },
     },
   },
