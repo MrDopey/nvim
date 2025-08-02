@@ -98,15 +98,16 @@ return {
       vim.keymap.set('n', '<leader>sc', function()
         require('telescope.builtin').find_files {
           cwd = utils.buffer_dir(),
+          no_ignore = true,
           prompt_title = 'Find files in current directory',
         }
-      end, { desc = '[S]earch [C]urrent [d]irectory' })
+      end, { desc = '[S]earch [c]urrent directory' })
       vim.keymap.set('n', '<leader>sC', function()
         require('telescope.builtin').live_grep {
           cwd = utils.buffer_dir(),
           prompt_title = 'Grep files in current directory',
         }
-      end, { desc = '[S]earch [C]urrent [D]irectory with grep' })
+      end, { desc = '[S]earch [C]urrent directory with grep' })
 
       -- Slightly advanced example of overriding default behavior and theme
       vim.keymap.set('n', '<leader>/', function()
