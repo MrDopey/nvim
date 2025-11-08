@@ -23,10 +23,10 @@ return {
     vim.keymap.set('n', '<leader>hn', function()
       harpoon:list():select(2)
     end, { desc = 'harpoon select at index 2' })
-    vim.keymap.set('n', '<leader>hi', function()
+    vim.keymap.set('n', '<leader>he', function()
       harpoon:list():select(3)
     end, { desc = 'harpoon select at index 3' })
-    vim.keymap.set('n', '<leader>h', function()
+    vim.keymap.set('n', '<leader>hi', function()
       harpoon:list():select(4)
     end, { desc = 'harpoon select at index 4' })
 
