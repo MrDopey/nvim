@@ -1,8 +1,20 @@
+# Tree-sitter
+
+## Install treesitter cli
+
+https://github.com/tree-sitter/tree-sitter/blob/master/crates/cli/README.md
+
+```shell
+brew install tree-sitter-cli
+```
+
+## Build essentials
+
+> May be deprecated
 Need to install for treesitter https://stackoverflow.com/questions/75587679/neovim-treesitter-returning-no-c-complier-error?noredirect=1
 
 > Settings are for neovim 0.11.3
 
-# Dependency
 
 ```shell
 sudo apt update && sudo apt install -y build-essential
