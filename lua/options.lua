@@ -55,6 +55,10 @@ vim.o.splitright = true
 vim.o.list = true
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 
+vim.opt.tabstop = 4 -- Width of a tab character
+vim.opt.shiftwidth = 4 -- Indentation width
+vim.opt.softtabstop = 4 -- Number of spaces per Tab in insert mode
+
 -- Preview substitutions live, as you type!
 vim.o.inccommand = 'split'
 
