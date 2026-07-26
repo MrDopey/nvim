@@ -138,7 +138,8 @@ return {
             'sh',
             '-c',
             [[
-              fd --hidden --type f 'proposal\.md$' .claude/worktrees \
+              FD=$(command -v fd || command -v fdfind) &&
+              "$FD" --hidden --type f 'proposal\.md$' .claude/worktrees \
               | rg --pcre2 '\.claude/worktrees/([^/]+)/openspec/changes/\1/proposal\.md$'
             ]],
           },
@@ -146,11 +147,12 @@ return {
         }
       end, { desc = '[S]earch [o]penSpec Worktree proposals' })
 
+      local fd = vim.fn.executable 'fd' == 1 and 'fd' or 'fdfind'
       vim.keymap.set('n', '<leader>sO', function()
         builtin.find_files {
           prompt_title = 'OpenSpec Proposals',
           find_command = {
-            'fd',
+            fd,
             '--type',
             'f',
             'proposal.md',
