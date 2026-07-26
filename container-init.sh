@@ -95,11 +95,14 @@ curl -fssl https://herdr.dev/install.sh | sh
 mkdir -p ~/.config/herdr/
 
 cat << EOF > ~/.config/herdr/config.toml
-   [terminal]
-   default_shell = "bash"
+[terminal]
+default_shell = "bash"
 
-   [keys]
-   split_vertical = [ "prefix+v", "prefix+|" ]
+[keys]
+split_vertical = [ "prefix+v", "prefix+|" ]
+
+[theme]
+name = "solarized"
 EOF
 
 ${SUDO} ln -sf ~/.local/bin/herdr /usr/local/bin/herdr
