@@ -131,6 +131,36 @@ return {
       vim.keymap.set('n', '<leader>sn', function()
         builtin.find_files { cwd = vim.fn.stdpath 'config' }
       end, { desc = '[S]earch [N]eovim files' })
+
+      vim.keymap.set('n', '<leader>so', function()
+        builtin.find_files {
+          find_command = {
+            'sh',
+            '-c',
+            [[
+              fd --hidden --type f 'proposal\.md$' .claude/worktrees \
+              | rg --pcre2 '\.claude/worktrees/([^/]+)/openspec/changes/\1/proposal\.md$'
+            ]],
+          },
+          prompt_title = 'OpenSpec Worktree Proposals',
+        }
+      end, { desc = '[S]earch [o]penSpec Worktree proposals' })
+
+      vim.keymap.set('n', '<leader>sO', function()
+        builtin.find_files {
+          prompt_title = 'OpenSpec Proposals',
+          find_command = {
+            'fd',
+            '--type',
+            'f',
+            'proposal.md',
+            'openspec/changes',
+          },
+          file_ignore_patterns = {
+            'openspec/changes/archive/',
+          },
+        }
+      end, { desc = '[S]earch [O]penSpec proposals' })
     end,
   },
 }
