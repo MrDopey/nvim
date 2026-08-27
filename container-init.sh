@@ -95,6 +95,7 @@ curl -fssl https://herdr.dev/install.sh | sh
 mkdir -p ~/.config/herdr/
 
 cat << EOF > ~/.config/herdr/config.toml
+onboarding = false
 [terminal]
 default_shell = "bash"
 
@@ -103,6 +104,12 @@ split_vertical = [ "prefix+v", "prefix+|" ]
 
 [theme]
 name = "solarized"
+
+[ui.sidebar.agents.rows_by_agent]
+claude = [
+  ["state_icon", "tab", "workspace"],
+  ["agent", "terminal_title_stripped"],
+]
 EOF
 
 ${SUDO} ln -sf ~/.local/bin/herdr /usr/local/bin/herdr
