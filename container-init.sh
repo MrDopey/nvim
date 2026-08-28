@@ -105,8 +105,8 @@ split_vertical = [ "prefix+v", "prefix+|" ]
 [theme]
 name = "solarized"
 
-[ui.sidebar.agents.rows_by_agent]
-claude = [
+[ui.sidebar.agents]
+rows = [
   ["state_icon", "tab", "workspace"],
   ["agent", "terminal_title_stripped"],
 ]
