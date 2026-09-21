@@ -1,3 +1,4 @@
+return {}
 --[[
 --dockerfile
 RUN curl -fL "https://github.com/coursier/coursier/releases/latest/download/cs-$(uname -m)-pc-linux.gz" | gzip -d > /usr/local/bin/cs \
